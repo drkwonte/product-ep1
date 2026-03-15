@@ -4,6 +4,7 @@ import { StickerPalette } from './components/StickerPalette/StickerPalette';
 import { A4Page } from './components/A4Page/A4Page';
 import { ExportPanel } from './components/ExportPanel/ExportPanel';
 import { DisqusSection } from './components/DisqusSection/DisqusSection';
+import { AppFooter } from './components/AppFooter/AppFooter';
 import { useActivityManager } from './hooks/useActivityManager';
 import { useStickerManager } from './hooks/useStickerManager';
 import { useLocalStorage } from './hooks/useLocalStorage';
@@ -108,6 +109,7 @@ function App() {
       />
 
       <DisqusSection />
+      <AppFooter />
     </div>
   );
 }

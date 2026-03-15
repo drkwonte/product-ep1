@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary screenshots and debug images
+*.png
+.playwright-mcp/

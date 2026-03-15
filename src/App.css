@@ -184,7 +184,8 @@ body {
   .app-header,
   .top-controls,
   .activity-list-section,
-  .export-panel {
+  .export-panel,
+  .disqus-section {
     display: none !important;
   }
 

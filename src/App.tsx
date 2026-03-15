@@ -3,6 +3,7 @@ import { ActivityList } from './components/ActivityList/ActivityList';
 import { StickerPalette } from './components/StickerPalette/StickerPalette';
 import { A4Page } from './components/A4Page/A4Page';
 import { ExportPanel } from './components/ExportPanel/ExportPanel';
+import { DisqusSection } from './components/DisqusSection/DisqusSection';
 import { useActivityManager } from './hooks/useActivityManager';
 import { useStickerManager } from './hooks/useStickerManager';
 import { useLocalStorage } from './hooks/useLocalStorage';
@@ -105,6 +106,8 @@ function App() {
         onSave={handleSaveActivity}
         onClose={handleCloseModal}
       />
+
+      <DisqusSection />
     </div>
   );
 }

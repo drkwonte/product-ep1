@@ -1,0 +1,209 @@
+/* ── A4 출력 영역 ── */
+
+.a4-page {
+  position: relative;
+  width: 100%;
+  /* A4 비율: 210 : 297 */
+  aspect-ratio: 210 / 297;
+  background: white;
+  border: 2.5px dashed #a8c8e8;
+  border-radius: 6px;
+  box-shadow:
+    0 4px 20px rgba(91, 143, 201, 0.12),
+    inset 0 0 0 6px rgba(200, 225, 245, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.a4-page-sticker-mode {
+  cursor: copy;
+}
+
+/*
+  A4 내부 clock: flex: 1로 남은 공간을 채우고,
+  SVG를 그 안에서 수직 중앙 정렬해 제목 아래에서 자연스럽게 중앙에 위치함
+*/
+.a4-page .clock-wheel-wrapper {
+  flex: 1;
+  width: 86%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── A4 제목 영역 ── */
+
+/*
+  A4 표준 상단 여백: A4 297mm 기준 약 25mm = 약 8.4%.
+  48px 고정값은 460px 너비 A4(651px 높이)에서 7.4%, 320px 너비 모바일(453px 높이)에서 10.6%로
+  양쪽 모두 인쇄 문서다운 여백을 제공한다.
+*/
+.a4-title-section {
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: 48px;
+  padding: 0 5%;
+  text-align: center;
+  cursor: default;
+}
+
+.a4-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
+  flex-wrap: nowrap;
+}
+
+.a4-name-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px dashed #b8d4e8;
+  outline: none;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e3a5f;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  min-width: 40px;
+  max-width: 140px;
+  padding: 0 4px;
+  display: inline-block;
+  cursor: text;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: baseline;
+}
+
+.a4-name-input:empty::before {
+  content: attr(data-placeholder);
+  color: #b0cce0;
+  font-weight: 400;
+}
+
+.a4-name-input:focus {
+  border-style: solid;
+  border-color: #5b8fc9;
+  outline: none;
+}
+
+.a4-title-suffix {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e3a5f;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+/* ── A4 라벨 및 스티커 ── */
+
+.a4-label {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  font-size: 0.62rem;
+  color: #b0c8d8;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.placed-sticker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  user-select: none;
+  touch-action: none;
+}
+
+.placed-sticker--selected {
+  filter: drop-shadow(0 0 5px rgba(91, 143, 201, 0.85));
+}
+
+/* ── 스티커 툴바 ── */
+
+.sticker-toolbar {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: white;
+  border-radius: 20px;
+  padding: 3px 6px;
+  box-shadow: 0 2px 12px rgba(30, 58, 95, 0.2);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.sticker-toolbar--below {
+  bottom: auto;
+  top: calc(100% + 6px);
+}
+
+.sticker-toolbar-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 13px;
+  background: #f0f6fc;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.1s, transform 0.1s;
+  font-family: monospace;
+  font-weight: 700;
+  color: #1e3a5f;
+  line-height: 1;
+}
+
+.sticker-toolbar-btn:hover {
+  background: #ddeaf6;
+  transform: scale(1.15);
+}
+
+.sticker-toolbar-btn--delete:hover {
+  background: #fde8e8;
+}
+
+/* ── 내보내기 중 편집 UI 숨김 ── */
+
+.a4-page--exporting {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.a4-page--exporting .placed-sticker--selected {
+  filter: none !important;
+}
+
+/* ── 인쇄 ── */
+
+@media print {
+  .sticker-toolbar {
+    display: none !important;
+  }
+
+  .placed-sticker--selected {
+    filter: none !important;
+  }
+
+  .a4-label {
+    display: none !important;
+  }
+
+  .a4-name-input {
+    border-bottom-color: transparent !important;
+  }
+}

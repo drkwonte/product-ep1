@@ -1,0 +1,91 @@
+.export-panel {
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  border: 1.5px solid #d4e9f7;
+  padding: 12px 14px;
+  box-shadow: 0 2px 12px rgba(91, 143, 201, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.export-panel-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #5b8fc9;
+  margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.export-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex: 1;
+}
+
+.export-btn {
+  flex: 1;
+  padding: 9px 8px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.export-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.export-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.export-btn--jpg {
+  background: #ddeaf6;
+  color: #1e3a5f;
+}
+
+.export-btn--jpg:hover:not(:disabled) {
+  background: #c8dcf0;
+}
+
+.export-btn--print {
+  background: #f0f6fc;
+  color: #1e3a5f;
+  border: 1.5px solid #d4e9f7;
+}
+
+.export-btn--print:hover:not(:disabled) {
+  background: #e4eff9;
+}
+
+/* 데스크톱 사이드바: 세로 배치로 전환 */
+@media (min-width: 740px) {
+  .export-panel {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px 12px;
+    gap: 0;
+  }
+
+  .export-panel-heading {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #ddeaf6;
+  }
+
+  .export-btns {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

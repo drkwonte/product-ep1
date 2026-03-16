@@ -2,7 +2,7 @@ import { DiscussionEmbed } from 'disqus-react';
 import './DisqusSection.css';
 
 const DISQUS_SHORTNAME = 'vacation-4';
-const PAGE_URL = 'https://product-ep1.pages.dev';
+const PAGE_URL = 'https://hmdad.uk';
 const PAGE_IDENTIFIER = 'vacation-planner-v1';
 const PAGE_TITLE = '방학 생활계획표 짜기';
 

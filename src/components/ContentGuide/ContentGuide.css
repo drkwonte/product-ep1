@@ -1,0 +1,161 @@
+.content-guide {
+  max-width: 780px;
+  margin: 56px auto 0;
+  padding: 0 20px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* ── 섹션 ───────────────────────────────────────── */
+
+.cg-section {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.cg-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* ── 제목 ───────────────────────────────────────── */
+
+.cg-h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a2a3a;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #a8d4f5;
+}
+
+.cg-h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2c4a8a;
+  margin: 24px 0 8px;
+}
+
+/* ── 단락 ───────────────────────────────────────── */
+
+.content-guide p {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+}
+
+/* ── 단계별 목록 ─────────────────────────────────── */
+
+.cg-steps {
+  margin: 0 0 16px;
+  padding-left: 24px;
+  font-size: 0.95rem;
+}
+
+.cg-steps li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+/* ── 표 ─────────────────────────────────────────── */
+
+.cg-table-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+.cg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  min-width: 480px;
+}
+
+.cg-table th,
+.cg-table td {
+  border: 1px solid #d0dae5;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.cg-table thead th {
+  background: #e8f1fb;
+  font-weight: 700;
+  color: #1a2a3a;
+}
+
+.cg-table tbody tr:nth-child(even) {
+  background: #f7fafd;
+}
+
+.cg-note {
+  font-size: 0.82rem;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* ── FAQ ─────────────────────────────────────────── */
+
+.cg-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cg-faq-item {
+  border: 1px solid #dce6f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cg-faq-q {
+  display: block;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a2a3a;
+  cursor: pointer;
+  background: #f4f8fd;
+  user-select: none;
+  list-style: none;
+}
+
+.cg-faq-q::-webkit-details-marker {
+  display: none;
+}
+
+.cg-faq-q::before {
+  content: '▶ ';
+  font-size: 0.75rem;
+  color: #4a6fa5;
+}
+
+.cg-faq-item[open] .cg-faq-q::before {
+  content: '▼ ';
+}
+
+.cg-faq-a {
+  margin: 0;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  background: #fff;
+  border-top: 1px solid #dce6f0;
+  line-height: 1.75;
+}
+
+@media (max-width: 600px) {
+  .content-guide {
+    padding: 0 14px;
+  }
+
+  .cg-h2 {
+    font-size: 1.15rem;
+  }
+}
+
+@media print {
+  .content-guide {
+    display: none;
+  }
+}

@@ -5,6 +5,7 @@ import './Navbar.css';
 const NAV_ITEMS = [
   { to: '/', label: '🏠 홈', end: true },
   { to: '/guide', label: '📖 사용 가이드', end: false },
+  { to: '/columns', label: '🗞️ 칼럼', end: false },
   { to: '/resources', label: '📚 교육 자료', end: false },
 ];
 

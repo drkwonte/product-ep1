@@ -1,0 +1,97 @@
+/* ── ResourcesPage ──────────────────────────────── */
+
+.resources-content {
+  padding-top: 8px;
+}
+
+.res-section {
+  padding: 40px 0 8px;
+  border-bottom: 1px solid #e4eef7;
+}
+
+.res-section:last-child {
+  border-bottom: none;
+}
+
+.res-h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a3a5c;
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #a8d4f5;
+}
+
+/* ── 링크 카드 그리드 ──────────────────────────── */
+
+.res-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.res-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  border: 1.5px solid #d4e8f7;
+  border-radius: 12px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+  box-shadow: 0 1px 6px rgba(30, 58, 95, 0.06);
+}
+
+.res-card:hover {
+  border-color: #7bbde0;
+  box-shadow: 0 4px 16px rgba(30, 58, 95, 0.12);
+  transform: translateY(-2px);
+}
+
+.res-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e5fa0;
+}
+
+.res-card-desc {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #555;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.res-card-url {
+  font-size: 0.78rem;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+/* ── 에디토리얼 섹션 ───────────────────────────── */
+
+.res-editorial .res-h2 {
+  border-bottom-color: #b8d9a8;
+}
+
+.res-h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c5a3a;
+  margin: 24px 0 8px;
+}
+
+.res-editorial p {
+  font-size: 0.93rem;
+  color: #444;
+  line-height: 1.8;
+  margin: 0 0 14px;
+}
+
+@media (max-width: 480px) {
+  .res-grid {
+    grid-template-columns: 1fr;
+  }
+}

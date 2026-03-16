@@ -1,0 +1,145 @@
+/* ── Navbar ─────────────────────────────────────── */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e2ecf7;
+  box-shadow: 0 2px 10px rgba(30, 58, 95, 0.07);
+  z-index: 900;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+}
+
+/* ── 브랜드 ──────────────────────────────────────── */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-brand:hover {
+  color: #3b7dd8;
+}
+
+/* ── 링크 목록 ───────────────────────────────────── */
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.navbar-link {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a6880;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navbar-link:hover {
+  background: #edf3fb;
+  color: #1e3a5f;
+}
+
+.navbar-link--active {
+  background: #d5e9f9;
+  color: #1e5fa0;
+}
+
+/* ── 햄버거 토글 (모바일) ──────────────────────────── */
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.navbar-toggle:hover {
+  background: #edf3fb;
+}
+
+.navbar-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #1e3a5f;
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.navbar-toggle.open .navbar-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-toggle.open .navbar-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.open .navbar-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── 모바일 드롭다운 ─────────────────────────────── */
+
+@media (max-width: 600px) {
+  .navbar-brand-text {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid #e2ecf7;
+    box-shadow: 0 6px 20px rgba(30, 58, 95, 0.1);
+    flex-direction: column;
+    padding: 12px 20px 16px;
+    gap: 4px;
+    z-index: 899;
+  }
+
+  .navbar-links--open {
+    display: flex;
+  }
+
+  .navbar-link {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+}

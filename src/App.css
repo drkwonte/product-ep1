@@ -14,11 +14,18 @@ body {
   color: #1e3a5f;
 }
 
+/* ── 네비게이션 바 공간 확보 ── */
+
+.app-content {
+  padding-top: 56px; /* fixed Navbar 높이 */
+  min-height: calc(100vh - 56px);
+}
+
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 56px);
   padding: 20px 16px 48px;
 }
 
@@ -106,7 +113,7 @@ body {
     padding: 14px 12px;
     box-shadow: 0 2px 12px rgba(91, 143, 201, 0.1);
     position: sticky;
-    top: 24px;
+    top: 72px; /* 56px navbar + 16px breathing room */
     width: 100%;
   }
 

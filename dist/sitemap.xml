@@ -25,6 +25,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- 정책 (편집/면책/저작권) -->
+  <url>
+    <loc>https://hmdad.uk/policies</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- 칼럼 목록 -->
   <url>
     <loc>https://hmdad.uk/columns</loc>

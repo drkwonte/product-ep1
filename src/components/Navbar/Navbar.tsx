@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { to: '/guide', label: '📖 사용 가이드', end: false },
   { to: '/columns', label: '🗞️ 칼럼', end: false },
   { to: '/resources', label: '📚 교육 자료', end: false },
+  { to: '/policies', label: '🛡️ 정책', end: false },
 ];
 
 export function Navbar() {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './AppFooter.css';
 
@@ -19,6 +20,9 @@ export function AppFooter() {
             <button className="app-footer-link" onClick={() => setShowPrivacy(true)}>
               개인정보처리방침
             </button>
+            <Link className="app-footer-link" to="/policies">
+              편집·면책·저작권
+            </Link>
             <a
               className="app-footer-link"
               href="mailto:drkwonte@gmail.com"

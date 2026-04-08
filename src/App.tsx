@@ -6,6 +6,7 @@ import { GuidePage } from './pages/GuidePage';
 import { ResourcesPage } from './pages/ResourcesPage';
 import { ColumnsPage } from './pages/ColumnsPage';
 import { ColumnDetailPage } from './pages/ColumnDetailPage';
+import { PoliciesPage } from './pages/PoliciesPage';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/columns" element={<ColumnsPage />} />
           <Route path="/columns/:id" element={<ColumnDetailPage />} />
+          <Route path="/policies" element={<PoliciesPage />} />
         </Routes>
       </div>
       <AppFooter />

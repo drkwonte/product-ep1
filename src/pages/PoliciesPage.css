@@ -1,0 +1,48 @@
+.policies-content {
+  padding-top: 28px;
+}
+
+.policies-updated {
+  margin: 0 0 18px;
+  color: #7a8793;
+  font-size: 0.9rem;
+}
+
+.policies-section {
+  background: #ffffff;
+  border: 1px solid #e6eef7;
+  border-radius: 14px;
+  padding: 18px 18px;
+  margin: 0 0 14px;
+  box-shadow: 0 2px 12px rgba(30, 58, 95, 0.06);
+}
+
+.policies-h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  color: #1a3a5c;
+}
+
+.policies-p {
+  margin: 0 0 10px;
+  color: #34495e;
+  line-height: 1.8;
+}
+
+.policies-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #34495e;
+  line-height: 1.8;
+}
+
+.policies-list li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .policies-section {
+    padding: 16px 14px;
+  }
+}
+

@@ -44,10 +44,71 @@
 
 /* ── 본문 ──────────────────────────────────────── */
 
-.col-detail-body {
-  max-width: 720px;
+.col-detail-layout {
+  max-width: 980px;
   margin: 0 auto;
-  padding: 40px 24px 24px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
+  padding: 32px 24px 10px;
+}
+
+.col-detail-aside {
+  position: sticky;
+  top: 76px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.col-box {
+  background: #ffffff;
+  border: 1px solid #e6eef7;
+  border-radius: 12px;
+  padding: 14px 14px;
+  box-shadow: 0 2px 12px rgba(30, 58, 95, 0.06);
+}
+
+.col-box-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #1a3a5c;
+  margin-bottom: 10px;
+}
+
+.col-toc,
+.col-ref {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.col-toc-link {
+  display: block;
+  color: #2d5ea1;
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.col-toc-link:hover {
+  text-decoration: underline;
+}
+
+.col-ref-link {
+  display: block;
+  color: #4a6fa5;
+  text-decoration: underline;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.col-detail-body {
+  padding: 0 0 24px;
 }
 
 .col-detail-section {
@@ -91,6 +152,73 @@
 
 .col-detail-list-item strong {
   color: #1a3a5c;
+}
+
+/* ── 관련 칼럼 ─────────────────────────────────── */
+
+.col-related {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e6eef7;
+}
+
+.col-related-title {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a3a5c;
+}
+
+.col-related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.col-related-card {
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #e6eef7;
+  border-radius: 12px;
+  padding: 12px 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.col-related-card:hover {
+  border-color: #7bbde0;
+  box-shadow: 0 2px 10px rgba(30, 58, 95, 0.1);
+}
+
+.col-related-emoji {
+  font-size: 1.4rem;
+  width: 36px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.col-related-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.col-related-card-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #1a3a5c;
+  line-height: 1.4;
+}
+
+.col-related-card-desc {
+  font-size: 0.85rem;
+  color: #4a6880;
+  line-height: 1.55;
 }
 
 /* ── 이전 / 다음 네비게이션 ────────────────────── */
@@ -161,6 +289,20 @@
     font-size: 1.25rem;
   }
 
+  .col-detail-layout {
+    grid-template-columns: 1fr;
+    padding: 18px 16px 10px;
+  }
+
+  .col-detail-aside {
+    position: static;
+    top: auto;
+  }
+
+  .col-related-grid {
+    grid-template-columns: 1fr;
+  }
+
   .col-nav-inner {
     grid-template-columns: 1fr;
   }
@@ -170,6 +312,6 @@
   }
 
   .col-detail-body {
-    padding: 28px 16px 16px;
+    padding: 0 0 16px;
   }
 }

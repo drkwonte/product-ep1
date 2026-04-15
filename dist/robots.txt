@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hmdad.uk/sitemap.xml
+Sitemap: https://intothebetter.com/sitemap.xml

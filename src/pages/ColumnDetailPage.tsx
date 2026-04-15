@@ -4,7 +4,7 @@ import { COLUMNS } from '../data/columns';
 import './PageLayout.css';
 import './ColumnDetailPage.css';
 
-const SITE_ORIGIN = 'https://hmdad.uk';
+const SITE_ORIGIN = 'https://intothebetter.com';
 const DEFAULT_AUTHOR = '방학 생활계획표 편집팀';
 const RELATED_COLUMNS_LIMIT = 6;
 

@@ -4,6 +4,8 @@ import './Navbar.css';
 
 import timetableLogoUrl from '/timetable_logo.png';
 
+const LOGO_URL_VERSION = '2';
+
 const NAV_ITEMS = [
   { to: '/', label: '🏠 홈', end: true },
   { to: '/guide', label: '📖 사용 가이드', end: false },
@@ -25,7 +27,7 @@ export function Navbar() {
         <NavLink to="/" className="navbar-brand" onClick={closeMenu}>
           <img
             className="navbar-brand-logo"
-            src={timetableLogoUrl}
+            src={`${timetableLogoUrl}?v=${LOGO_URL_VERSION}`}
             alt=""
             aria-hidden="true"
           />

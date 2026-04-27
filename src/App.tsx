@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar/Navbar';
 import { AppFooter } from './components/AppFooter/AppFooter';
@@ -10,23 +9,7 @@ import { ColumnDetailPage } from './pages/ColumnDetailPage';
 import { PoliciesPage } from './pages/PoliciesPage';
 import './App.css';
 
-const ADSENSE_CLIENT = 'ca-pub-9342204830254267';
-const ADSENSE_SCRIPT_ID = 'adsense-script';
-
 function AppShell() {
-  useEffect(() => {
-    // 로컬/개발 환경에서 광고 스크립트가 403을 내는 경우가 많아서 production에서만 로드
-    if (!import.meta.env.PROD) return;
-    if (document.getElementById(ADSENSE_SCRIPT_ID)) return;
-
-    const script = document.createElement('script');
-    script.id = ADSENSE_SCRIPT_ID;
-    script.async = true;
-    script.crossOrigin = 'anonymous';
-    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
-    document.head.appendChild(script);
-  }, []);
-
   return (
     <>
       <Navbar />

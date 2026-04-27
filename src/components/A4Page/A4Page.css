@@ -3,14 +3,12 @@
 .a4-page {
   position: relative;
   width: 100%;
-  /* A4 비율: 210 : 297 */
-  aspect-ratio: 210 / 297;
-  background: white;
-  border: 2.5px dashed #a8c8e8;
-  border-radius: 6px;
-  box-shadow:
-    0 4px 20px rgba(91, 143, 201, 0.12),
-    inset 0 0 0 6px rgba(200, 225, 245, 0.12);
+  /* 편집 화면에서는 '용지'가 아니라 '캔버스'로 보여서 최대한 크게 편집 */
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -29,11 +27,18 @@
 */
 .a4-page .clock-wheel-wrapper {
   flex: 1;
-  width: 86%;
+  width: 100%;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.a4-page .clock-wheel-svg {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  filter: drop-shadow(0 4px 20px rgba(91, 143, 201, 0.12));
 }
 
 /* ── A4 제목 영역 ── */
@@ -50,6 +55,7 @@
   padding: 0 5%;
   text-align: center;
   cursor: default;
+  display: none;
 }
 
 .a4-title-row {
@@ -60,37 +66,13 @@
   flex-wrap: nowrap;
 }
 
-.a4-name-input {
-  background: transparent;
-  border: none;
-  border-bottom: 2px dashed #b8d4e8;
-  outline: none;
+.a4-title-name {
   font-size: 26px;
   font-weight: 700;
   color: #1e3a5f;
   font-family: 'Noto Sans KR', sans-serif;
-  text-align: center;
-  min-width: 40px;
-  max-width: 140px;
-  padding: 0 4px;
-  display: inline-block;
-  cursor: text;
   line-height: 1.4;
   white-space: nowrap;
-  overflow: hidden;
-  vertical-align: baseline;
-}
-
-.a4-name-input:empty::before {
-  content: attr(data-placeholder);
-  color: #b0cce0;
-  font-weight: 400;
-}
-
-.a4-name-input:focus {
-  border-style: solid;
-  border-color: #5b8fc9;
-  outline: none;
 }
 
 .a4-title-suffix {
@@ -112,6 +94,7 @@
   letter-spacing: 0.04em;
   pointer-events: none;
   user-select: none;
+  display: none;
 }
 
 .placed-sticker {
@@ -180,12 +163,20 @@
 /* ── 내보내기 중 편집 UI 숨김 ── */
 
 .a4-page--exporting {
+  /* export(JPG)에서는 A4 비율/배경을 복구 */
+  aspect-ratio: 210 / 297;
+  background: white;
   border-color: transparent !important;
   box-shadow: none !important;
 }
 
 .a4-page--exporting .placed-sticker--selected {
   filter: none !important;
+}
+
+/* export(JPG)에서는 제목이 보이도록 */
+.a4-page--exporting .a4-title-section {
+  display: block;
 }
 
 /* ── 인쇄 ── */
@@ -203,7 +194,7 @@
     display: none !important;
   }
 
-  .a4-name-input {
-    border-bottom-color: transparent !important;
+  .a4-title-section {
+    display: block !important;
   }
 }

@@ -9,9 +9,9 @@ import { ColumnDetailPage } from './pages/ColumnDetailPage';
 import { PoliciesPage } from './pages/PoliciesPage';
 import './App.css';
 
-function App() {
+function AppShell() {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
       <div className="app-content">
         <Routes>
@@ -24,6 +24,14 @@ function App() {
         </Routes>
       </div>
       <AppFooter />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
     </BrowserRouter>
   );
 }

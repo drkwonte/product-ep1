@@ -92,23 +92,10 @@ export function AppFooter() {
                   를 방문하면 제3자 광고 쿠키 비활성화에 대한 안내를 받으실 수 있습니다.
                 </p>
 
-                <h4>Disqus (댓글 시스템)</h4>
-                <p>
-                  댓글 기능은 <strong>Disqus</strong>를 통해 제공됩니다. Disqus는 자체 개인정보
-                  처리방침에 따라 데이터를 처리합니다.{' '}
-                  <a
-                    href="https://help.disqus.com/en/articles/1717103-disqus-privacy-policy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Disqus 개인정보처리방침 보기
-                  </a>
-                </p>
-
                 <h3>3. 쿠키 정책</h3>
                 <p>
-                  본 서비스 자체는 쿠키를 사용하지 않습니다. 다만 Google AdSense 및 Disqus 등
-                  제3자 서비스가 해당 서비스 운영을 위해 쿠키를 사용할 수 있습니다. 브라우저
+                  본 서비스 자체는 쿠키를 사용하지 않습니다. 다만 Google AdSense 등 제3자 서비스가
+                  해당 서비스 운영을 위해 쿠키를 사용할 수 있습니다. 브라우저
                   설정에서 쿠키를 비활성화할 수 있으나, 일부 기능이 제한될 수 있습니다.
                 </p>
 

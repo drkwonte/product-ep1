@@ -21,7 +21,8 @@ export function Navbar() {
     <nav className="navbar" role="navigation" aria-label="주 메뉴">
       <div className="navbar-inner">
         <NavLink to="/" className="navbar-brand" onClick={closeMenu}>
-          📅 <span className="navbar-brand-text">방학 생활계획표</span>
+          <img className="navbar-brand-logo" src="/timetable_logo.png" alt="" aria-hidden="true" />
+          <span className="navbar-brand-text">방학 생활계획표</span>
         </NavLink>
 
         <button

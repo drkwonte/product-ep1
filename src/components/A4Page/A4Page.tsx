@@ -1,4 +1,3 @@
-import { useRef, useEffect, useCallback } from 'react';
 import type React from 'react';
 import type { Activity, PlacedSticker } from '../../types';
 import { ClockWheel } from '../ClockWheel/ClockWheel';
@@ -8,7 +7,6 @@ import './A4Page.css';
 interface A4PageProps {
   containerRef: { readonly current: HTMLDivElement | null };
   plannerName: string;
-  onPlannerNameChange: (name: string) => void;
   activities: Activity[];
   dragStartAngle: number | null;
   dragEndAngle: number | null;
@@ -31,7 +29,6 @@ interface A4PageProps {
 export function A4Page({
   containerRef,
   plannerName,
-  onPlannerNameChange,
   activities,
   dragStartAngle,
   dragEndAngle,
@@ -50,35 +47,6 @@ export function A4Page({
   onStickerDelete,
   onStickerResize,
 }: A4PageProps) {
-  const nameRef = useRef<HTMLSpanElement>(null);
-
-  // plannerName 상태 → DOM 동기화 (React가 contentEditable 내부를 건드리지 않도록)
-  useEffect(() => {
-    const el = nameRef.current;
-    if (el && el.textContent !== plannerName) {
-      el.textContent = plannerName;
-    }
-  }, [plannerName]);
-
-  const handleNameInput = useCallback(
-    (e: React.FormEvent<HTMLSpanElement>) => {
-      const raw = e.currentTarget.textContent ?? '';
-      const clamped = raw.slice(0, 10);
-      if (raw !== clamped) {
-        // maxLength 초과 시 자르고 커서를 끝으로 이동
-        e.currentTarget.textContent = clamped;
-        const sel = window.getSelection();
-        const range = document.createRange();
-        range.selectNodeContents(e.currentTarget);
-        range.collapse(false);
-        sel?.removeAllRanges();
-        sel?.addRange(range);
-      }
-      onPlannerNameChange(clamped);
-    },
-    [onPlannerNameChange],
-  );
-
   return (
     <div
       ref={containerRef}
@@ -90,14 +58,7 @@ export function A4Page({
     >
       <div className="a4-title-section" onClick={(e) => e.stopPropagation()}>
         <div className="a4-title-row">
-          <span
-            ref={nameRef}
-            className="a4-name-input"
-            contentEditable
-            suppressContentEditableWarning
-            data-placeholder="이름"
-            onInput={handleNameInput}
-          />
+          <span className="a4-title-name">{plannerName || '이름'}</span>
           <span className="a4-title-suffix">의 방학 생활계획표</span>
         </div>
       </div>

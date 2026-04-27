@@ -24,4 +24,5 @@ dist-ssr
 
 # Temporary screenshots and debug images
 *.png
+!public/timetable_logo.png
 .playwright-mcp/

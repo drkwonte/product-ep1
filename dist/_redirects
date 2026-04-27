@@ -1,3 +1,7 @@
 # Cloudflare Pages SPA fallback
 # React Router 가 모든 경로를 처리할 수 있도록 index.html 로 리다이렉트
+#
+# 주의: 정적 파일(이미지, 에셋)은 먼저 그대로 서빙해야 한다.
+/timetable_logo.png  /timetable_logo.png  200
+/assets/*  /assets/:splat  200
 /*  /index.html  200

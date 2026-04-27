@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
+import timetableLogoUrl from '/timetable_logo.png';
+
 const NAV_ITEMS = [
   { to: '/', label: '🏠 홈', end: true },
   { to: '/guide', label: '📖 사용 가이드', end: false },
@@ -23,7 +25,7 @@ export function Navbar() {
         <NavLink to="/" className="navbar-brand" onClick={closeMenu}>
           <img
             className="navbar-brand-logo"
-            src={`${import.meta.env.BASE_URL}timetable_logo.png`}
+            src={timetableLogoUrl}
             alt=""
             aria-hidden="true"
           />

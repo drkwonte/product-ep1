@@ -3,5 +3,6 @@
 #
 # 주의: 정적 파일(이미지, 에셋)은 먼저 그대로 서빙해야 한다.
 /timetable_logo.png  /timetable_logo.png  200
+/naver80c090f72d59f207f076ba529036ad74.html  /naver80c090f72d59f207f076ba529036ad74.html  200
 /assets/*  /assets/:splat  200
 /*  /index.html  200
